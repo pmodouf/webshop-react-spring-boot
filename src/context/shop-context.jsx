@@ -10,7 +10,7 @@ export const ShopProvider = ({ children }) => {
 
     // Hämta produkter från backend
     useEffect(() => {
-        axios.get('http://localhost:55555/api/products')
+        axios.get('http://localhost:8080/api/products')
             .then(response => {
                 setProducts(response.data);
                 setLoading(false);
