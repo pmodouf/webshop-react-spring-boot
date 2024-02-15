@@ -68,10 +68,10 @@ public class ProductService {
         }
         return Collections.emptyList(); // Returnera en tom lista om inga produkter hämtades
     }
-}
 
 
-  /*  public ProductDTO convertToDTO(Product product){
+
+   /* public ProductDTO convertToDTO2(Product product){
         ProductDTO productDTO = new ProductDTO();
        productDTO.setProductName(product.getProductName());
        productDTO.setPrice(product.getPrice());
@@ -120,6 +120,6 @@ public class ProductService {
         productRepository.save(product8);
 
 
-    }
+    }*/
 
-}*/
+}
