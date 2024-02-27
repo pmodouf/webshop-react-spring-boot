@@ -6,6 +6,8 @@ import { Cart } from "./pages/cart/cart";
 import { ShopProvider } from "./context/shop-context";
 import { RegisterPage } from "./pages/RegisterPage";
 import {LoginPage} from "./pages/LoginPage";
+import OrderSuccessPage from "./pages/OrderSuccessPage";
+import OrderComponent from "./context/OrderComponent";
 function App(){
   return <div className="App">
     <ShopProvider>
@@ -16,6 +18,9 @@ function App(){
         <Route path = "/cart" element={<Cart />}/>
         <Route path = "/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/order-success" element={<OrderSuccessPage />} />
+
+
 
 
 

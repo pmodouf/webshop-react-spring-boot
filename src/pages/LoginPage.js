@@ -19,7 +19,8 @@ export const LoginPage = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                localStorage.setItem('token', data.jwtToken); // Spara token i localStorage
+                localStorage.setItem('token', data.jwtToken);
+                console.log(data.jwtToken)// Spara token i localStorage
                 alert('Inloggning lyckad!');
                 navigate('/'); // Navigera till startsidan eller önskad sida
             } else {

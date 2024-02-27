@@ -59,6 +59,7 @@ public class UserController {
         Optional<User> authenticatedUser = userService.authenticate(loginRequest.getEmail(), loginRequest.getPassword());
         if (authenticatedUser.isPresent()) {
             String token = jwtUtil.generateToken(authenticatedUser.get().getEmail());
+            System.out.println("Generated JWT Token: " + token);
             AuthenticationResponse response = new AuthenticationResponse(token);
             return ResponseEntity.ok(response); // Returnerar ResponseEntity med AuthenticationResponse
         } else {

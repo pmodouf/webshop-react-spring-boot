@@ -15,9 +15,9 @@ public class JwtUtil {
     private final String SECRET = "mySecretKey";
     private final Algorithm algorithm = Algorithm.HMAC256(SECRET);
 
-    public String generateToken(String username) {
+    public String generateToken(String email) {
         return JWT.create()
-                .withSubject(username)
+                .withSubject(email)
                 .withIssuedAt(new Date())
                 .withExpiresAt(new Date(System.currentTimeMillis() + 86_400_000)) // 24h expiration
                 .sign(algorithm);
