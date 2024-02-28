@@ -7,8 +7,8 @@ import axios from 'axios';
 import {ShopContext} from "./shop-context";
 
 const OrderComponent = () => {
-    const { cartItems, setCartItems } = useContext(ShopContext);
-    console.log({ cartItems, setCartItems });
+    const { cartItems, resetCart } = useContext(ShopContext);
+    console.log({ cartItems });
     const [errorMessage, setErrorMessage] = useState('');
     const [orderStatus, setOrderStatus] = useState('pending');
     const navigate = useNavigate();
@@ -40,6 +40,7 @@ const OrderComponent = () => {
                 console.log('Order skapad:', response.data);
                 setOrderStatus('success');
                // setCartItems({});
+                resetCart();
                 navigate('/order-success');
             } else {
                 throw new Error('Order skapandet misslyckades');

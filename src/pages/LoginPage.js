@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth} from '../context/AuthContext';
 
 export const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // Hook för att navigera
+    const navigate = useNavigate();// Hook för att navigera
+    const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,6 +21,8 @@ export const LoginPage = () => {
 
             if (response.ok) {
                 const data = await response.json();
+                login(data.jwtToken);
+                console.log(data.jwtToken);
                 localStorage.setItem('token', data.jwtToken);
                 console.log(data.jwtToken)// Spara token i localStorage
                 alert('Inloggning lyckad!');

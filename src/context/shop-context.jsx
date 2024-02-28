@@ -55,8 +55,12 @@ export const ShopProvider = ({ children }) => {
         }
         return totalAmount;
     };
+    const resetCart = () => {
+        setCartItems({});
+    };
 
-    const contextValue = { products, cartItems, addToCart, removeFromCart, updateCartItemCount, getTotalCartAmount, loading };
+
+    const contextValue = { products, cartItems, addToCart, removeFromCart, updateCartItemCount, getTotalCartAmount, loading, resetCart };
 
     return (
         <ShopContext.Provider value={contextValue}>

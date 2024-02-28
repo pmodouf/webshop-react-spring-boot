@@ -7,9 +7,11 @@ import { ShopProvider } from "./context/shop-context";
 import { RegisterPage } from "./pages/RegisterPage";
 import {LoginPage} from "./pages/LoginPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
-import OrderComponent from "./context/OrderComponent";
+import { AuthProvider} from "./context/AuthContext";
+
 function App(){
   return <div className="App">
+    <AuthProvider>
     <ShopProvider>
     <Router>
       <Navbar/>
@@ -28,6 +30,7 @@ function App(){
 
     </Router>
       </ShopProvider >
+    </AuthProvider>
   </div>;
 }
 export default App;

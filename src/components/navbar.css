@@ -1,11 +1,10 @@
 .navbar {
-    width: 100%;
-    height: 80px;
-    background-color: rgb(19, 19, 19);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 20px;
+    height: 80px;
+    background-color: rgb(19, 19, 19);
 }
 
 .links, .left-links {
@@ -13,19 +12,44 @@
     align-items: center;
 }
 
-.links a, .left-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px; /* Bibehållen storlek */
-    margin: 0 10px; /* Justera avståndet så att det passar din design */
+.right-links {
+    margin-left: auto; /* Lägger till detta för att skjuta .right-links till höger */
+    display: flex;
+    align-items: center;
 }
 
-/* Behåller ursprungliga markeringar och stilar för länkarna */
-a {
+.links a, .left-links a, .right-links a, .right-links span, .right-links button {
     color: white;
     text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
 }
 
-a:visited {
-    color: white;
+.right-links button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
+
+.left-links span, .left-links button {
+    color: white; /* Sätter textfärgen till vit */
+    font-size: 15px; /* Matchar fontstorleken för länkarna */
+    margin-right: 10px; /* Justera avståndet efter behov */
+    cursor: pointer; /* Gör så att muspekaren blir en pekare */
+}
+
+.left-links button {
+    background: none; /* Tar bort bakgrund */
+    border: none; /* Tar bort kantlinje */
+    padding: 0; /* Tar bort padding */
+}
+
+/* Du kan behöva lägga till :hover effekter för button för att matcha dina länkar */
+.left-links button:hover {
+    color: #ccc; /* Exempel på hover-effekt, justera färgen efter din design */
+}
+
+
