@@ -1,5 +1,6 @@
 package com.podwebshop.podwebshopbackend.controller;
 
+import com.podwebshop.podwebshopbackend.dto.OrderDto;
 import com.podwebshop.podwebshopbackend.model.Order;
 import com.podwebshop.podwebshopbackend.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,16 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+    @Autowired
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
 
     // Skapa en ny order
     @PostMapping
     @PreAuthorize("isAuthenticated()")
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-        Order newOrder = orderService.createOrder(order);
+    public ResponseEntity<OrderDto> createOrder(@RequestBody OrderDto orderDto) {
+        OrderDto newOrder = orderService.createOrder(orderDto);
         return ResponseEntity.ok(newOrder);
     }
 

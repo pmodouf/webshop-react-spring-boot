@@ -1,0 +1,36 @@
+/* OrdersPage specifik CSS */
+.orders {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.order {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.orderItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.orderItem img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.orderItem div {
+    flex-grow: 1;
+}
+
+.orderItem p {
+    margin: 5px 0;
+}

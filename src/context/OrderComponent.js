@@ -21,8 +21,12 @@ const OrderComponent = () => {
             navigate('/login');
             return;
         }
+
+        // Filtrerar ut cartItems där kvantiteten är större än 0
+        const filteredCartItems = Object.entries(cartItems).filter(([_, quantity]) => quantity > 0);
+
         const orderDetails = {
-            carts: Object.entries(cartItems).map(([productId, quantity]) => ({
+            carts: filteredCartItems.map(([productId, quantity]) => ({
                 product: { id: productId },
                 quantity
             })),
@@ -57,7 +61,7 @@ const OrderComponent = () => {
     return (
         <div>
             {orderStatus === 'failed' && <p className="error-message">{errorMessage}</p>}
-            <button onClick={createOrder}>Skapa Order</button>
+            <button onClick={createOrder}>Create Order</button>
         </div>
     );
 };

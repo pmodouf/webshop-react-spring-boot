@@ -9,8 +9,8 @@ const OrderSuccessPage = () => {
             <h1>Tack för din beställning!</h1>
             <p>Din order har skapats framgångsrikt.</p>
             <div>
-                <button onClick={() => navigate('/')}>Fortsätt handla</button>
-                <button onClick={() => navigate('/orders')}>Visa mina ordrar</button>
+                <button onClick={() => navigate('/')}>Continue Shopping</button>
+                <button onClick={() => navigate('/orders')}>Show My Orders</button>
             </div>
         </div>
     );
