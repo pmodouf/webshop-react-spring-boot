@@ -3,7 +3,7 @@ export const productImageMap = {
     "Airpods": "airpodsWS.jpg",
     "Ipad Pro": "apple_ipad-proWS.jpg",
     "Iphone": "apple-iphone-11WS.jpg",
-    "HeadPhones": "HeadphonesWS.webp",
+    "HeadPhones": "HeadphonesWS.jpg",
     "Lamp": "LampaWS.jpg",
     "Playstation 5": "Playstation-5WS.webp",
     "TV": "TVWS.jpg",

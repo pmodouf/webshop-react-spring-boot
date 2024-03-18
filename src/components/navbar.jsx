@@ -17,7 +17,7 @@ export const Navbar = () => {
                     </>
                 ) : (
                     <>
-                        <span><UserCircle size={32} /> Inloggad: {user.email}</span>
+                        <Link to="/"><UserCircle size={32} /> Online: {user.email}</Link>
                         <button onClick={logout} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}><SignOut size={32} /> Sign out</button>
                     </>
                 )}

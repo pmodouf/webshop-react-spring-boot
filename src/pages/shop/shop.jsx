@@ -6,7 +6,7 @@ export const Shop = () => {
     const { products, loading } = useContext(ShopContext);
 
     if (loading) {
-        return <div>Laddar produkter...</div>;
+        return <div>Loading products...</div>;
     }
 
     return (
