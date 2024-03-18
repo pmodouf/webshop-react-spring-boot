@@ -7,7 +7,7 @@ export const CartItem = ({ data }) => {
     const { id, productName, price } = data;
     const { cartItems, addToCart, removeFromCart, updateCartItemCount } = useContext(ShopContext);
 
-    // Hämta bildfilens namn från mappningen, använd 'default.png' om inget hittas
+
     const productImage = `/assets/${productImageMap[productName] || 'default.png'}`;
 
     return (

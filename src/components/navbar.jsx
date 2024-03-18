@@ -12,13 +12,13 @@ export const Navbar = () => {
             <div className="left-links">
                 {!user ? (
                     <>
-                        <Link to="/login"><SignIn size={32} /> Logga in</Link>
-                        <Link to="/register"><UserCircle size={32} /> Registrera</Link>
+                        <Link to="/login"><SignIn size={32} /> Log in</Link>
+                        <Link to="/register"><UserCircle size={32} /> Register</Link>
                     </>
                 ) : (
                     <>
                         <span><UserCircle size={32} /> Inloggad: {user.email}</span>
-                        <button onClick={logout} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}><SignOut size={32} /> Logga ut</button>
+                        <button onClick={logout} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}><SignOut size={32} /> Sign out</button>
                     </>
                 )}
             </div>

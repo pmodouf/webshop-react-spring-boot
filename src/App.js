@@ -9,6 +9,7 @@ import {LoginPage} from "./pages/LoginPage";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
 import { AuthProvider} from "./context/AuthContext";
 import OrdersPage from "./pages/OrdersPage";
+import './index.css';
 
 function App(){
   return <div className="App">

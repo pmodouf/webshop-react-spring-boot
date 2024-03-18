@@ -44,26 +44,28 @@ const OrdersPage = () => {
     }, []);
 
     return (
-        <div className="orders">
-            <h2>My Orders</h2>
-            {user && <p>Logged in as: {user.email}</p>}
-            {orders.map((order) => (
-                <div className="order" key={order.id}>
-                    <p>Order ID: {order.id}</p>
-                    <p>Order Date: {new Date(order.orderDate).toLocaleDateString()}</p>
-                    {order.carts.map((cart, index) => (
-                        <div className="orderItem" key={index}>
-                            <img src={`/assets/${productImageMap[cart.product.productName] || 'default.png'}`} alt={cart.product.productName} />
-                            <div>
-                                <p>Product: {cart.product.productName}</p>
-                                <p>Quantity: {cart.quantity}</p>
-                                <p>Price per item: ${cart.product.price}</p>
-                                <p>Subtotal: ${cart.quantity * cart.product.price}</p>
+        <div className="bg-gray-50 min-h-screen flex flex-col items-center justify-center">
+            <div className="max-w-6xl w-full space-y-8 p-10 bg-white rounded-xl shadow-lg">
+                <h2 className="font-semibold text-3xl text-gray-900">My Orders</h2>
+                {user && <p className="text-gray-700">Logged in as: {user.email}</p>}
+                {orders.map((order) => (
+                    <div className="order bg-gray-100 p-5 rounded-md shadow my-3" key={order.id}>
+                        <h3 className="text-xl font-bold">Order ID: {order.id}</h3>
+                        <p className="text-gray-800">Order Date: {new Date(order.orderDate).toLocaleDateString()}</p>
+                        {order.carts.map((cart, index) => (
+                            <div className="orderItem flex items-center space-x-4 my-2" key={index}>
+                                <img className="h-20 w-20 object-cover rounded" src={`/assets/${productImageMap[cart.product.productName] || 'default.png'}`} alt={cart.product.productName} />
+                                <div>
+                                    <p className="font-semibold">{cart.product.productName}</p>
+                                    <p>Quantity: {cart.quantity}</p>
+                                    <p>Price per item: ${cart.product.price}</p>
+                                    <p>Subtotal: ${cart.quantity * cart.product.price}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            ))}
+                        ))}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

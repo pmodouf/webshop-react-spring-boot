@@ -1,6 +1,6 @@
 import {ShopContext} from "../../context/shop-context";
 import "./shop.css";
-import {useContext} from "react";
+import React, {useContext} from "react";
 import { Product } from "./product";
 export const Shop = () => {
     const { products, loading } = useContext(ShopContext);
@@ -12,7 +12,7 @@ export const Shop = () => {
     return (
         <div className="shop">
             <div className="shopTitle">
-                <h1>POD Shop</h1>
+                <span className="font-semibold text-6xl  text-gray-900">Pod Shop</span>
             </div>
             <div className="products">
                 {products.map(product => (

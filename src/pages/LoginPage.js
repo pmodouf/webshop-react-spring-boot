@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth} from '../context/AuthContext';
 
 export const LoginPage = () => {
@@ -37,13 +37,48 @@ export const LoginPage = () => {
     };
 
     return (
-        <div>
-            <h2>Logga in</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                <input type="password" placeholder="Lösenord" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                <button type="submit">Logga in</button>
-            </form>
+        <div className="bg-gray-50 min-h-screen flex flex-col">
+            <div className="p-8 w-full flex justify-center items-center bg-white shadow">
+                <span className="font-semibold text-3xl text-gray-900">Pod Shop</span>
+            </div>
+
+            <div className="flex-grow flex items-center justify-center">
+                <div className="max-w-md w-full space-y-8 p-10 bg-white rounded-xl shadow-lg">
+                    <div className="text-left">
+                        <h2 className="mt-6 text-2xl font-extrabold text-gray-900">Log in</h2>
+                    </div>
+                    <form className="space-y-6" onSubmit={handleSubmit}>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="E-mail"
+                            className="w-full p-3 border border-gray-300 rounded-md"
+                            required
+                        />
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Password"
+                            className="w-full p-3 border border-gray-300 rounded-md"
+                            required
+                        />
+                        <button
+                            type="submit"
+                            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium"
+                            style={{ backgroundColor: '#6B7280', color: 'white' }} // Exempel: Ersätt med din themeColors eller Tailwind klasser
+                        >
+                            Log in
+                        </button>
+                    </form>
+                    <div className="text-center">
+                        <Link to="/register" className="font-medium text-primary-600 hover:text-primary-500">
+                            Don't have an account yet? Sign up
+                        </Link>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
